@@ -406,10 +406,15 @@ a:hover {
 /*=================================================================
   Navigation
 ==================================================================*/
+
+nav.navbar {
+  padding: .5rem 0;
+}
+
 .navigation {
   background-color: transparent;
   width: 100%;
-  margin-bottom: -56px;
+  margin-bottom: -60px;
   font-size: 1.2rem;
   text-transform: uppercase;
 }
@@ -454,6 +459,12 @@ a:hover {
   background-size: cover;
   background-attachment: fixed;
 }
+
+.section-anchor {
+    top: 50px;
+    position:relative;
+    z-index:5;
+  }
 
 .hero-area {
   background-size: cover;
@@ -562,6 +573,65 @@ a:hover {
   width: 100%;
   position: absolute;
   z-index: -1;
+}
+
+/*=================================================================
+  Banner (Home) section
+==================================================================*/
+
+section.hero-area {
+  background: -webkit-radial-gradient(top left, rgba(51,67,87,1) 0%, rgba(9,12,17,1) 100%);
+  background: radial-gradient(at top left, rgba(51,67,87,1) 0%, rgba(9,12,17,1) 100%);
+}
+
+img.img-header {
+  width: 80%;
+  max-width: 1110px;
+}
+
+a.down-arrow {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+a.down-arrow:hover {
+  opacity: .5;
+}
+
+a.down-arrow {
+  padding-top: 60px;
+}
+a.down-arrow span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+}
+
+span.full-vertical {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+span.full-vertical img {
+    vertical-align: middle;
 }
 
 /*=================================================================
