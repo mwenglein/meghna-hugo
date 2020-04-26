@@ -585,8 +585,7 @@ section.hero-area {
 }
 
 img.img-header {
-  width: 80%;
-  max-width: 1110px;
+  width: 100%;
 }
 
 a.down-arrow {
