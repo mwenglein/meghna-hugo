@@ -435,7 +435,7 @@ section {
 
 section div.container {
   padding-left: 30px;
-  padding-left: 30px;
+  padding-right: 30px;
 }
 
 section div.row.title {
@@ -537,10 +537,10 @@ section img.img-header {
   background-attachment: fixed;
 }
 
-a.down-arrow {
+nav.arrow a {
   position: absolute;
   bottom: 0px;
-  padding-top: 100px;
+  padding: 100px 0 0 0;
   left: 50%;
   z-index: 2;
   display: inline-block;
@@ -551,12 +551,14 @@ a.down-arrow {
   letter-spacing: .1em;
   text-decoration: none;
   transition: opacity .3s;
-}
-a.down-arrow:hover {
   opacity: .5;
 }
 
-a.down-arrow span {
+nav.arrow a:hover {
+  opacity: .9;
+}
+
+nav.arrow a span {
   position: absolute;
   top: 0;
   left: 50%;
