@@ -17,6 +17,14 @@ jQuery(function ($) {
 	observer.observe();
 
 	/* ========================================================================= */
+	/*	highlight active navigation item
+	/* ========================================================================= */
+	$('.navbar .nav-link').on('click', function(){
+	   $('.navbar').find('.active').removeClass('active');
+	   $(this).addClass('active');
+	});
+
+	/* ========================================================================= */
 	/*	Magnific popup
 	/* =========================================================================  */
 	$('.image-popup').magnificPopup({

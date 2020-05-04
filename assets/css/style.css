@@ -32,6 +32,14 @@ h6 {
   color: #9c9d9d;
 }
 
+h1 {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 4em;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+}
+
 h2 {
   font-size: 1.7em;
 }
@@ -302,7 +310,8 @@ a:hover {
 }
 
 .title {
-  padding-bottom: 60px;
+  padding-top: 20px
+  padding-bottom: 40px;
 }
 
 .title h2 {
@@ -424,27 +433,40 @@ section {
   transition: .5s all;
 }
 
-section .container {
+section div.container {
+  padding-left: 30px;
+  padding-left: 30px;
+}
 
+section div.row.title {
+  justify-content: left;
 }
 
 section img.img-header {
-  width: 70%;
-  margin: 1em 0 1em 0;
+  width: 2em;
+  margin-right: 20px;
 }
 
 #home img.img-header {
+  margin: 0;
   padding: 0;
   width: 70%;
 }
 
 @media (max-width: 768px) {
 
-  section div.img-header-wrapper {
+  section div.row.title {
+    /* justify-content: center; */
   }
 
   section img.img-header {
-    margin: 1em 0 0 0;
+    width: 1em;
+    margin: 1em 10px 1em 0;
+  }
+
+  section h1 {
+    font-size: 2em;
+    height: 2em;
   }
 
   section h2 {
