@@ -584,11 +584,6 @@ section.hero-area {
   background: radial-gradient(at top left, rgba(51,67,87,1) 0%, rgba(9,12,17,1) 100%);
 }
 
-img.img-header {
-  width: 100%;
-  margin: 40px 0;
-}
-
 a.down-arrow {
   position: absolute;
   bottom: 0px;
@@ -624,14 +619,13 @@ a.down-arrow span {
   box-sizing: border-box;
 }
 
-span.full-vertical {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
+#home div.container {
+  height: 100vh !important;
+  line-height: 100vh !important;
 }
 
-span.full-vertical img {
-    vertical-align: middle;
+#home img.img-header {
+  width: 100%;
 }
 
 /*=================================================================
