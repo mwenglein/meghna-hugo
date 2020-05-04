@@ -13,6 +13,8 @@ html {
 
 body {
   background: #242930;
+  background: -webkit-radial-gradient(top left, rgba(51,67,87,1) 0%, rgba(9,12,17,1) 100%);
+  background: radial-gradient(at top left, rgba(51,67,87,1) 0%, rgba(9,12,17,1) 100%);
   font-family: "Quattrocento Sans", sans-serif;
   color: #737f8a;
   -webkit-font-smoothing: antialiased;
@@ -407,12 +409,58 @@ a:hover {
   bottom: 0;
 }
 
+
 /*=================================================================
-  Navigation
+  All sections
+==================================================================*/
+
+.section-anchor {
+    position:relative;
+    z-index:5;
+}
+
+section {
+  min-height: 100vh;
+  transition: .5s all;
+}
+
+section .container {
+
+}
+
+section img.img-header {
+  width: 70%;
+  margin: 1em 0 1em 0;
+}
+
+#home img.img-header {
+  padding: 0;
+  width: 70%;
+}
+
+@media (max-width: 768px) {
+
+  section div.img-header-wrapper {
+  }
+
+  section img.img-header {
+    margin: 1em 0 0 0;
+  }
+
+  section h2 {
+    font-size: 1.2em;
+  }
+
+}
+
+/*=================================================================
+  Navigation section
 ==================================================================*/
 
 #navbar {
-  height: 0;
+  min-height: 0px;
+  height: 0px;
+  padding: 0px;
 }
 
 #navbar .container {
@@ -422,7 +470,7 @@ a:hover {
 .navigation {
   background-color: transparent;
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   text-transform: uppercase;
 }
 
@@ -467,18 +515,49 @@ a:hover {
   background-attachment: fixed;
 }
 
-.section-anchor {
-    top: 50px;
-    position:relative;
-    z-index:5;
-  }
+a.down-arrow {
+  position: absolute;
+  bottom: 0px;
+  padding-top: 100px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+a.down-arrow:hover {
+  opacity: .5;
+}
+
+a.down-arrow span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+}
+
+
+/*=================================================================
+  All hero-area sections
+==================================================================*/
 
 .hero-area {
   background-size: cover;
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .hero-area:before {
@@ -575,51 +654,8 @@ a:hover {
 
 .dark-bg {
   background: rgba(0, 0, 0, 0.7);
-  height: 100%;
-  width: 100%;
   position: absolute;
   z-index: -1;
-}
-
-/*=================================================================
-  All sections
-==================================================================*/
-
-section.hero-area {
-  background: transparent;
-}
-
-#home img.img-header {
-  width: 70%;
-}
-
-section {
-  transition: .5s all;
-  min-height: 1vh;
-}
-
-section div.img-header-wrapper {
-  text-align: left;
-}
-
-section img.img-header {
-  margin: 1em 0;
-  width: 70%;
-}
-
-@media (max-width: 768px) {
-
-  section div.img-header-wrapper {
-  }
-
-  section img.img-header {
-    margin: 1em 0;
-  }
-
-  section h2 {
-    font-size: 1.2em;
-  }
-
 }
 
 /*=================================================================
@@ -627,48 +663,10 @@ section img.img-header {
 ==================================================================*/
 
 #home {
-  background: -webkit-radial-gradient(top left, rgba(51,67,87,1) 0%, rgba(9,12,17,1) 100%);
-  background: radial-gradient(at top left, rgba(51,67,87,1) 0%, rgba(9,12,17,1) 100%);
-}
-
-a.down-arrow {
-  position: absolute;
-  bottom: 0px;
-  left: 50%;
-  z-index: 2;
-  display: inline-block;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
-  color: #fff;
-  font : normal 400 20px/1 'Josefin Sans', sans-serif;
-  letter-spacing: .1em;
-  text-decoration: none;
-  transition: opacity .3s;
-}
-a.down-arrow:hover {
-  opacity: .5;
-}
-
-a.down-arrow {
-  padding-top: 60px;
-}
-a.down-arrow span {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 24px;
-  height: 24px;
-  margin-left: -12px;
-  border-left: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  box-sizing: border-box;
+  align-items: center;  
 }
 
 #home div.container {
-  height: 100vh !important;
-  line-height: 100vh !important;
   text-align: center;
 }
 
@@ -676,29 +674,32 @@ a.down-arrow span {
   width: 80%;
 }
 
+#home a.down-arrow {
+  padding-top: 60px;
+}
+
 /*=================================================================
   About section
 ==================================================================*/
 
-#about .accordion {
-  margin-bottom: 100px;  
+#why .accordion {
 }
 
-#about .accordion .card {
+#why .accordion .card {
   background: transparent;
   border: none;
 }
 
-#about .accordion .card-header {
+#why .accordion .card-header {
   background: transparent;
   border: none;
 }
 
-#about .accordion button {
+#why .accordion button {
   text-align: left;
 }
 
-#about button {
+#why button {
   font-size: inherit;
   padding: 0;
   color: inherit;
@@ -1012,6 +1013,7 @@ a.down-arrow span {
   Portfolio section
 ==================================================================*/
 .portfolio-filter {
+  margin-top: 60px;
   margin-bottom: 40px;
   text-align: center;
 }
