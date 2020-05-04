@@ -1,0 +1,25 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ if $data.history.history.enable }}
+{{ with $data.history.history }}
+{{"<!-- Welcome Slider-->" | safeHTML}}
+<span class="section-anchor" id="{{ .anchor }}"></span>
+<section id="{{ .section_id }}" class="hero-area">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-12">
+				<div class="img-header-wrapper">
+					<h1><img class="img-header" src="images/Wenglein-History.png"/></h1>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				{{ .content | markdownify }}
+			</div>
+		</div>
+	</div>
+</section>
+{{"<!-- /Welcome Slider-->" | safeHTML}}
+{{end}}
+{{end}}

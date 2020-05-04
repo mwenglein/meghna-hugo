@@ -16,6 +16,7 @@ body {
   font-family: "Quattrocento Sans", sans-serif;
   color: #737f8a;
   -webkit-font-smoothing: antialiased;
+  font-size: 1.2em;
 }
 
 h1,
@@ -26,7 +27,11 @@ h5,
 h6 {
   font-weight: 400;
   font-family: "Quattrocento Sans", sans-serif;
-  color: #afbac4;
+  color: #9c9d9d;
+}
+
+h2 {
+  font-size: 1.7em;
 }
 
 p {
@@ -406,14 +411,17 @@ a:hover {
   Navigation
 ==================================================================*/
 
-nav.navbar {
-  padding: .5rem 0;
+#navbar {
+  height: 0;
+}
+
+#navbar .container {
+  width: 100%;
 }
 
 .navigation {
   background-color: transparent;
   width: 100%;
-  margin-bottom: -60px;
   font-size: 1.2rem;
   text-transform: uppercase;
 }
@@ -581,6 +589,39 @@ section.hero-area {
   background: transparent;
 }
 
+#home img.img-header {
+  width: 70%;
+}
+
+section {
+  transition: .5s all;
+  min-height: 1vh;
+}
+
+section div.img-header-wrapper {
+  text-align: left;
+}
+
+section img.img-header {
+  margin: 1em 0;
+  width: 70%;
+}
+
+@media (max-width: 768px) {
+
+  section div.img-header-wrapper {
+  }
+
+  section img.img-header {
+    margin: 1em 0;
+  }
+
+  section h2 {
+    font-size: 1.2em;
+  }
+
+}
+
 /*=================================================================
   Banner (Home) section
 ==================================================================*/
@@ -628,45 +669,33 @@ a.down-arrow span {
 #home div.container {
   height: 100vh !important;
   line-height: 100vh !important;
+  text-align: center;
 }
 
 #home img.img-header {
-  width: 100%;
+  width: 80%;
 }
 
 /*=================================================================
   About section
 ==================================================================*/
 
-#about {
-  padding: 30px;
-  border-bottom: 2px solid transparent;
-  transition: .5s all;
-  margin-bottom: 20px;
-  height: 100%;
-}
-
-#about div.img-header-wrapper {
-  text-align: left;
-}
-
-#about img.img-header {
-  margin: 1em 0;
-  width: 70%;
-}
-
 #about .accordion {
-  margin-bottom: 1em !important;  
+  margin-bottom: 100px;  
 }
 
-#about .card {
+#about .accordion .card {
   background: transparent;
   border: none;
 }
 
-#about .card-header {
+#about .accordion .card-header {
   background: transparent;
   border: none;
+}
+
+#about .accordion button {
+  text-align: left;
 }
 
 #about button {
