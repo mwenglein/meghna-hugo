@@ -8,12 +8,11 @@ Tags: one-page, single-page, portfolio, custom-colors, post-formats, responsive,
 */
 /*=== MEDIA QUERY ===*/
 html {
-  background: rgba(9,12,17,1);
   color: #737f8a;
 }
 
 body {
-  background: rgba(9,12,17,1);
+  background: #242930;
   font-family: "Quattrocento Sans", sans-serif;
   color: #737f8a;
   -webkit-font-smoothing: antialiased;
@@ -468,7 +467,6 @@ nav.navbar {
 
 .hero-area {
   background-size: cover;
-  height: 100vh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -576,10 +574,18 @@ nav.navbar {
 }
 
 /*=================================================================
-  Banner (Home) section
+  All sections
 ==================================================================*/
 
 section.hero-area {
+  background: transparent;
+}
+
+/*=================================================================
+  Banner (Home) section
+==================================================================*/
+
+#home {
   background: -webkit-radial-gradient(top left, rgba(51,67,87,1) 0%, rgba(9,12,17,1) 100%);
   background: radial-gradient(at top left, rgba(51,67,87,1) 0%, rgba(9,12,17,1) 100%);
 }
@@ -632,8 +638,25 @@ a.down-arrow span {
   About section
 ==================================================================*/
 
-#about .accordion {
+#about {
+  padding: 30px;
+  border-bottom: 2px solid transparent;
+  transition: .5s all;
+  margin-bottom: 20px;
+  height: 100%;
+}
 
+#about div.img-header-wrapper {
+  text-align: left;
+}
+
+#about img.img-header {
+  margin: 1em 0;
+  width: 70%;
+}
+
+#about .accordion {
+  margin-bottom: 1em !important;  
 }
 
 #about .card {
@@ -662,6 +685,7 @@ a.down-arrow span {
   border-bottom: 2px solid transparent;
   transition: .5s all;
   margin-bottom: 20px;
+  height: 100%;
 }
 
 .threecols .block:hover {
