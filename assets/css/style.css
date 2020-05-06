@@ -445,6 +445,7 @@ a:hover {
 section {
   min-height: 100vh;
   transition: .5s all;
+  padding-bottom: 120px;
 }
 
 section div.container {
@@ -1052,7 +1053,7 @@ nav.arrow a span {
 ==================================================================*/
 
 #portfolio {
-  padding-bottom: 120px;
+
 }
 
 
