@@ -15,10 +15,26 @@ body {
   background: #242930;
   background: -webkit-radial-gradient(top left, rgba(51,67,87,1) 0%, rgba(9,12,17,1) 100%);
   background: radial-gradient(at top left, rgba(51,67,87,1) 0%, rgba(9,12,17,1) 100%);
-  font-family: "Quattrocento Sans", sans-serif;
+  font-family: 'campton-light';
   color: #737f8a;
   -webkit-font-smoothing: antialiased;
   font-size: 1.2em;
+}
+
+@font-face {
+    font-family: 'campton-black';
+    src: url('../fonts/campton-black-webfont.woff2') format('woff2'),
+         url('../fonts/campton-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'campton-light';
+    src: url('../fonts/campton-light-webfont.woff2') format('woff2'),
+         url('../fonts/campton-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 h1,
@@ -28,24 +44,22 @@ h4,
 h5,
 h6 {
   font-weight: 400;
-  font-family: "Quattrocento Sans", sans-serif;
   color: #9c9d9d;
 }
 
 h1 {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'campton-black';
   font-size: 4em;
-  font-weight: 900;
-  letter-spacing: 2px;
-  margin-bottom: 50px;
+  line-height: 3em;
 }
 
 h2 {
+  font-family: 'campton-light';
   font-size: 1.7em;
 }
 
 p {
-  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 1.1em;
 }
 
 [scroll-behavior=smooth] {
@@ -460,13 +474,13 @@ section img.img-header {
   }
 
   section img.img-header {
-    width: 1em;
-    margin: 1em 10px 1em 0;
+    width: 2em;
   }
 
   section h1 {
     font-size: 2em;
-    height: 2em;
+    height: 3em;
+    margin-top: 20px;
   }
 
   section h2 {
@@ -1036,6 +1050,12 @@ nav.arrow a span {
 /*=================================================================
   Portfolio section
 ==================================================================*/
+
+#portfolio {
+  padding-bottom: 120px;
+}
+
+
 .portfolio-filter {
   margin-top: 60px;
   margin-bottom: 40px;
@@ -1043,12 +1063,12 @@ nav.arrow a span {
 }
 
 .portfolio-filter .btn {
+  padding: 6px 20px;
   outline: 0;
   border: 1px solid rgba(236, 239, 241, 0.07);
   background: transparent;
   display: inline-block;
   font-size: 16px;
-  padding: 6px 20px;
   font-weight: 700;
   color: #737f8a;
   transition: .3s all;
@@ -1060,8 +1080,7 @@ nav.arrow a span {
 
 .portfolio-block {
   position: relative;
-  min-height: 450px;
-  padding: 20px 40px;
+  padding: 20px 30px 20px 30px;
   align-content: center;
   text-align: center;
 }
@@ -1133,8 +1152,13 @@ nav.arrow a span {
 }
 
 .portfolio-block p {
-  min-height: 190px;
+  font-size: .9em;
 }
+
+.portfolio-block a {
+  margin: 20px 0;
+}
+
 
 @media (max-width: 768px) {
   .portfolio-block {
