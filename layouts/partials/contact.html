@@ -54,10 +54,13 @@
 
 			<style>
 
-				#infopic {
-
-					overflow: visible !important;
-				}
+#map div div div:last-child div:last-child div div div:nth-child(3) {
+  left: 0 !important;
+  top: 30px !important;
+  border-top-width: 24px;
+  position: absolute;
+  transform: rotate(90deg);
+}
 				      
 			</style>
 
@@ -184,8 +187,12 @@
 				    // Add a marker
 				    var marker = new google.maps.Marker({
 				        map: map,
-				        position: new google.maps.LatLng(la, lo)
-				    });
+				        position: new google.maps.LatLng(la, lo),
+						icon: {
+								url: "images/marker.png",
+								scaledSize: new google.maps.Size(64, 64)
+							}
+					});
 
 					//Associate the styled map with the MapTypeId and set it to display.
 					map.mapTypes.set('styled_map', styledMapType);
@@ -193,28 +200,15 @@
 
 				    var info = new google.maps.InfoWindow({
 				        marker: marker,
-				        placement: 'right',
-				        offset: {
-				            left: '20px'
-				        },
-				        content: '<div><img src="images/Wenglein.png""></img></div>',
-				        showCloseButton: false,
-				        closeOnMapClick: false,
-				        padding: '48px',
-				        backgroundColor: 'rgba(0, 0, 0, 0.7)',
-				        border: false,
-				        borderRadius: '0px',
-				        shadow: false,
-				        fontColor: '#fff',
-				        fontSize: '15px'
+				        pixelOffset: new google.maps.Size(0, -10),
+				        content: '<div><img src="images/Wenglein.png""></img></div>'
 				    });
 
 				    marker.addListener('click', function() {
 				    	info.open(map, marker);
 				  	});
 
-				    console.log(info);
-				    info.open();
+			    	info.open(map, marker);
 				
 				}
 
