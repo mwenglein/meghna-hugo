@@ -1,7 +1,7 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 
-{{ if $data.banner.banner.enable }}
-{{ with $data.banner.banner }}
+{{ if $data.home.home.enable }}
+{{ with $data.home.home }}
 {{"<!-- Welcome Slider-->" | safeHTML}}
 <span class="section-anchor" id="{{ .anchor }}"></span>
 <section id="{{ .section_id }}" class="hero-area">
