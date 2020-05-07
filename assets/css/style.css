@@ -51,6 +51,7 @@ h1 {
   font-family: 'campton-black';
   font-size: 4em;
   line-height: 3em;
+  white-space: nowrap;
 }
 
 h2 {
@@ -468,7 +469,11 @@ section img.img-header {
   width: 70%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+
+  section {
+    padding-bottom: 60px;
+  }
 
   section div.row.title {
     /* justify-content: center; */
