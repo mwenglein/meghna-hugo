@@ -13,7 +13,7 @@
 		</div>
 		<div class="row justify-content-center">
 			{{"<!-- Contact Details -->" | safeHTML}}
-			<div class="contact-info col-lg-6 wow fadeInUp" data-wow-duration="500ms">
+			<div class="col-lg-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
 				<p> {{ .content | markdownify }} </p>
 				<div class="contact-details">
 					{{ range .contact_details }}
@@ -24,7 +24,218 @@
 					{{ end }}
 				</div>
 			</div>
+			<div class="col-lg-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+				<div id="map"></div>		
+			</div>
+		</div>
 
+		{{"<!-- Google Maps Code -->" | safeHTML}}
+
+		<style>
+
+			#map {
+				height: 525px;
+			}
+
+			#byplane, #bycar {
+				width: 50px;
+				height: 50px;
+				padding: 0;
+				margin: 0 5px;
+				background-color: #4e667f;
+				border-radius: 50px;
+				text-align: center;
+			}
+
+			#byplane i, #bycar i {
+				width: 50px;
+				height: 50px;
+				padding: 0;
+				margin: 0;
+				color: white;
+				font-size: 30px;
+				line-height: 48px;
+				vertical-align: middle;
+			}
+
+			#bycar {
+
+			}
+
+			#bycar i {
+				line-height: 40px;
+			}
+
+			#byplane i::hover, #bycar i::hover {
+				text-decoration: none;
+			}
+
+		</style>
+
+		<script>
+
+			function initMap() {
+
+				var styledMapType = new google.maps.StyledMapType(
+					[
+					    {
+					        "featureType": "administrative",
+					        "elementType": "labels",
+					        "stylers": [
+					            {
+					                "color": "#FFFFFF"
+					            },
+					            {
+					                "visibility": "simplified"
+					            }
+					        ]
+					    },
+					    {
+					        "featureType": "landscape.man_made",
+					        "elementType": "all",
+					        "stylers": [
+					            {
+					                "visibility": "simplified"
+					            },
+					            {
+					                "color": "#303030"
+					            }
+					        ]
+					    },
+					    {
+					        "featureType": "landscape.natural",
+					        "elementType": "geometry",
+					        "stylers": [
+					            {
+					                "color": "#000000"
+					            },
+					            {
+					                "visibility": "simplified"
+					            }
+					        ]
+					    },
+					    {
+					        "featureType": "poi",
+					        "elementType": "geometry",
+					        "stylers": [
+					            {
+					                "visibility": "off"
+					            }
+					        ]
+					    },
+					    {
+					        "featureType": "poi",
+					        "elementType": "labels.text",
+					        "stylers": [
+					            {
+					                "visibility": "simplified"
+					            },
+					            {
+					                "color": "#FFFFFF"
+					            }
+					        ]
+					    },
+					    {
+					        "featureType": "road",
+					        "elementType": "geometry",
+					        "stylers": [
+					            {
+					                "visibility": "simplified"
+					            },
+					            {
+					                "color": "#808080"
+					            }
+					        ]
+					    },
+					    {
+					        "featureType": "road",
+					        "elementType": "labels.text",
+					        "stylers": [
+					            {
+					                "color": "#FFFFFF"
+					            },
+					            {
+					                "visibility": "simplified"
+					            }
+					        ]
+					    },
+					    {
+					        "featureType": "road",
+					        "elementType": "labels.icon",
+					        "stylers": [
+					            {
+					                "visibility": "off"
+					            }
+					        ]
+					    },
+					    {
+					        "featureType": "water",
+					        "elementType": "all",
+					        "stylers": [
+					            {
+					                "color": "#303030"
+					            }
+					        ]
+					    }
+					]
+					,
+					{name: 'Map'});
+
+				var la = parseFloat({{ .map.latitude }});
+				var lo = parseFloat({{ .map.longitude }});
+
+				var map = new google.maps.Map(document.getElementById('map'), {
+					center: {lat: la, lng: lo},
+					zoom: 18,
+					streetViewControl: false,
+					mapTypeControlOptions: {
+				    	mapTypeIds: []
+					}
+				});
+
+				var image = {
+					url: 'images/marker-wenglein.png',
+					origin: new google.maps.Point(0, 0),
+					anchor: new google.maps.Point(160, 80)
+				};
+
+			    // Add a marker
+			    var marker = new google.maps.Marker({
+			        map: map,
+			        position: new google.maps.LatLng(la, lo),
+					icon: image,
+				    animation: google.maps.Animation.DROP,
+				    label: {
+						color: "white",
+						fontSize: "16px",
+						fontWeight: "bold"
+				    }
+				});
+
+				//Associate the styled map with the MapTypeId and set it to display.
+				map.mapTypes.set('styled_map', styledMapType);
+				map.setMapTypeId('styled_map');
+
+			    var info = new google.maps.InfoWindow({
+			        marker: marker,
+			        pixelOffset: new google.maps.Size(0, -10),
+			        content: '<a id="bycar" type="button" class="btn btn-link" href="https://goo.gl/maps/js7jKyk4pRwRxVkE7" target="_blank"><i class="ti-car"></i></button><a id="byplane" type="button" class="btn btn-link" href="https://goo.gl/maps/UoKiZbc482UGSVGA6" target="_blank"><i class="ti-world"></i></button>'
+				    });
+
+			    marker.addListener('click', function() {
+			    	info.open(map, marker);
+			  	});
+
+		    	info.open(map, marker);
+			
+			}
+
+	    </script>
+
+	    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ .map.apikey }}&callback=initMap"></script>
+
+<!--		
+		<div class="row">
 			{{"<!-- Contact Form -->" | safeHTML}}
 			<div class="col-lg-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
 				<form id="contact-form" class="form-meghna" method="post" action="{{ .form_action | safeURL }}" role="form">
@@ -47,176 +258,8 @@
 				</form>
 			</div>
 		</div>
-		
-		<div class="row">
+-->
 
-			<div id="map"></div>
-
-			<style>
-
-#map div div div:last-child div:last-child div div div:nth-child(3) {
-  left: 0 !important;
-  top: 30px !important;
-  border-top-width: 24px;
-  position: absolute;
-  transform: rotate(90deg);
-}
-				      
-			</style>
-
-			<script>
-
-				function initMap() {
-
-					var styledMapType = new google.maps.StyledMapType(
-						[
-						    {
-						        "featureType": "administrative",
-						        "elementType": "labels",
-						        "stylers": [
-						            {
-						                "color": "#FFFFFF"
-						            },
-						            {
-						                "visibility": "simplified"
-						            }
-						        ]
-						    },
-						    {
-						        "featureType": "landscape.man_made",
-						        "elementType": "all",
-						        "stylers": [
-						            {
-						                "visibility": "simplified"
-						            },
-						            {
-						                "color": "#303030"
-						            }
-						        ]
-						    },
-						    {
-						        "featureType": "landscape.natural",
-						        "elementType": "geometry",
-						        "stylers": [
-						            {
-						                "color": "#000000"
-						            },
-						            {
-						                "visibility": "simplified"
-						            }
-						        ]
-						    },
-						    {
-						        "featureType": "poi",
-						        "elementType": "geometry",
-						        "stylers": [
-						            {
-						                "visibility": "off"
-						            }
-						        ]
-						    },
-						    {
-						        "featureType": "poi",
-						        "elementType": "labels.text",
-						        "stylers": [
-						            {
-						                "visibility": "simplified"
-						            },
-						            {
-						                "color": "#FFFFFF"
-						            }
-						        ]
-						    },
-						    {
-						        "featureType": "road",
-						        "elementType": "geometry",
-						        "stylers": [
-						            {
-						                "visibility": "simplified"
-						            },
-						            {
-						                "color": "#808080"
-						            }
-						        ]
-						    },
-						    {
-						        "featureType": "road",
-						        "elementType": "labels.text",
-						        "stylers": [
-						            {
-						                "color": "#FFFFFF"
-						            },
-						            {
-						                "visibility": "simplified"
-						            }
-						        ]
-						    },
-						    {
-						        "featureType": "road",
-						        "elementType": "labels.icon",
-						        "stylers": [
-						            {
-						                "visibility": "off"
-						            }
-						        ]
-						    },
-						    {
-						        "featureType": "water",
-						        "elementType": "all",
-						        "stylers": [
-						            {
-						                "color": "#303030"
-						            }
-						        ]
-						    }
-						]
-						,
-						{name: 'Map'});
-
-					var la = parseFloat({{ .map.latitude }});
-					var lo = parseFloat({{ .map.longitude }});
-
-					var map = new google.maps.Map(document.getElementById('map'), {
-					  center: {lat: la, lng: lo},
-					  zoom: 18,
-					  mapTypeControlOptions: {
-					    mapTypeIds: ['styled_map', 'satellite']
-					  }
-					});
-
-				    // Add a marker
-				    var marker = new google.maps.Marker({
-				        map: map,
-				        position: new google.maps.LatLng(la, lo),
-						icon: {
-								url: "images/marker.png",
-								scaledSize: new google.maps.Size(64, 64)
-							}
-					});
-
-					//Associate the styled map with the MapTypeId and set it to display.
-					map.mapTypes.set('styled_map', styledMapType);
-					map.setMapTypeId('styled_map');
-
-				    var info = new google.maps.InfoWindow({
-				        marker: marker,
-				        pixelOffset: new google.maps.Size(0, -10),
-				        content: '<div><img src="images/Wenglein.png""></img></div>'
-				    });
-
-				    marker.addListener('click', function() {
-				    	info.open(map, marker);
-				  	});
-
-			    	info.open(map, marker);
-				
-				}
-
-		    </script>
-
-		    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ .map.apikey }}&callback=initMap"></script>
-
-		</div>
 	</div>
 </section>
 {{"<!-- /contact -->" | safeHTML}}

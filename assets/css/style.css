@@ -105,7 +105,7 @@ iframe {
 a,
 a:focus,
 a:hover {
-  text-decoration: none;
+  text-decoration: none !important;
   outline: 0;
 }
 
@@ -865,8 +865,14 @@ nav.arrow a span {
 }
 
 /*=================================================================
- Call To Action 2
+ Contact Us section
 ==================================================================*/
+
+#contact-info {
+  background-color: red;
+}
+
+
 .call-to-action-2 {
   padding: 100px 0;
   background-image: url("../images/call-to-action/call-to-action-bg.jpg");
