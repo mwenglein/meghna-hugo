@@ -193,7 +193,7 @@
 				});
 
 				var image = {
-					url: 'images/marker-wenglein.png',
+					url: '{{ "images/marker-wenglein.png" | absURL }}',
 					origin: new google.maps.Point(0, 0),
 					anchor: new google.maps.Point(160, 80)
 				};
@@ -203,12 +203,7 @@
 			        map: map,
 			        position: new google.maps.LatLng(la, lo),
 					icon: image,
-				    animation: google.maps.Animation.DROP,
-				    label: {
-						color: "white",
-						fontSize: "16px",
-						fontWeight: "bold"
-				    }
+				    animation: google.maps.Animation.DROP
 				});
 
 				//Associate the styled map with the MapTypeId and set it to display.
@@ -224,8 +219,6 @@
 			    marker.addListener('click', function() {
 			    	info.open(map, marker);
 			  	});
-
-		    	info.open(map, marker);
 			
 			}
 

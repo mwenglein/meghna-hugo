@@ -25,6 +25,10 @@ jQuery(function ($) {
 	   $('.navbar').find('.active').removeClass('active');
 	   $(this).addClass('active');
 	});
+	$('#arrow-why').on('click', function(){
+	   $('.navbar').find('.active').removeClass('active');
+	   $('#navlink-why').addClass('active');
+	});
 
 	// smooth scroll between sections with ease-in and -out
 	var html_body = $('html, body');
@@ -44,7 +48,6 @@ jQuery(function ($) {
 			}
 		}
 	});
-
 
 	jQuery.extend(jQuery.easing, {
 		easeInOutExpo: function (x, t, b, c, d) {

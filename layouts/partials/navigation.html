@@ -10,22 +10,22 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto">
 							<li class="nav-item">
-								<a class="nav-link" href='{{ "/" | absLangURL }}#home'>{{ i18n "menu_home" }}</a>
+								<a id="navlink-home" class="nav-link" href='{{ "/" | absLangURL }}#home'>{{ i18n "menu_home" }}</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href='{{ "/" | absLangURL }}#why'>{{ i18n "menu_why" }}</a>
+								<a id="navlink-why" class="nav-link" href='{{ "/" | absLangURL }}#why'>{{ i18n "menu_why" }}</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href='{{ "/" | absLangURL }}#history'>{{ i18n "menu_history" }}</a>
+								<a id="navlink-history" class="nav-link" href='{{ "/" | absLangURL }}#history'>{{ i18n "menu_history" }}</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href='{{ "/" | absLangURL }}#portfolio'>{{ i18n "menu_portfolio" }}</a>
+								<a id="navlink-portfolio" class="nav-link" href='{{ "/" | absLangURL }}#portfolio'>{{ i18n "menu_portfolio" }}</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href='{{ "/" | absLangURL }}#contact'>{{ i18n "menu_contact" }}</a>
+								<a id="navlink-contact" class="nav-link" href='{{ "/" | absLangURL }}#contact'>{{ i18n "menu_contact" }}</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href='https://blog.wenglein.de' target="_blank">ART</a>
+								<a id="navlink-art" class="nav-link" href='https://blog.wenglein.de' target="_blank">ART</a>
 							</li>
 							{{ if .IsHome }}
 							{{ else }}
