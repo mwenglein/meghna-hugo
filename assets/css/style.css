@@ -505,7 +505,7 @@ section img.img-header {
 }
 
 #navbar .container ul {
-  margin-right: 10px;
+  text-align: center
 }
 
 .navigation {
@@ -533,7 +533,8 @@ section img.img-header {
 }
 
 #select-language-box {
-  margin: 5px;
+  margin: 5px 15px;
+  display: inline-block;
   padding: 0 5px;
   width: fit-content;
   border: 1px solid gray;
@@ -550,10 +551,25 @@ section img.img-header {
   border: none;
   line-height: 1.5em;
   padding: 1em 0 1em 1em;
+  z-index: 99;
 }
 
 .navbar-toggler:focus {
   outline: 0;
+}
+
+#navbarSupportedContent.show {
+  position: fixed;
+  padding: 80px 0 50px 0px;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: #121e2c;
+  text-align: center;
+}
+
+#navbarSupportedContent.show .select-language {
+  display: table;
 }
 
 .bg-1 {
