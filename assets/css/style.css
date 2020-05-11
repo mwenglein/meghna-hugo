@@ -505,8 +505,8 @@ section img.img-header {
   padding: 0px;
 }
 
-#navbar .container {
-  width: 100%;
+#navbar .container ul {
+  margin-right: 10px;
 }
 
 .navigation {
@@ -525,9 +525,18 @@ section img.img-header {
   appearance: none;
 }
 
+.nav-item {
+}
+
+.nav-item a {
+  padding: 0;
+  margin: 5px;
+}
+
 #select-language-box {
-  margin-left: 5px;
+  margin: 5px;
   padding: 0 5px;
+  width: fit-content;
   border: 1px solid gray;
 }
 
@@ -538,12 +547,14 @@ section img.img-header {
   color: white;
 }
 
-.navbar-toggler:focus {
-  outline: 0;
+.navbar-toggler {
+  border: none;
+  line-height: 1.5em;
+  padding: 1em 0 1em 1em;
 }
 
-.nav-item {
-  margin-right: 5px;
+.navbar-toggler:focus {
+  outline: 0;
 }
 
 .bg-1 {
@@ -719,7 +730,7 @@ nav.arrow a span {
 }
 
 #home a.down-arrow {
-  padding-top: 60px;
+  padding-top: 80px;
 }
 
 /*=================================================================
@@ -867,11 +878,6 @@ nav.arrow a span {
 /*=================================================================
  Contact Us section
 ==================================================================*/
-
-#contact-info {
-  background-color: red;
-}
-
 
 .call-to-action-2 {
   padding: 100px 0;
