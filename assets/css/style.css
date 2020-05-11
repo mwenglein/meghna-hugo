@@ -50,7 +50,7 @@ h6 {
 h1 {
   font-family: 'campton-black';
   font-size: 4em;
-  line-height: 3em;
+  line-height: 4em;
   white-space: nowrap;
 }
 
@@ -439,8 +439,7 @@ a:hover {
 ==================================================================*/
 
 .section-anchor {
-    position:relative;
-    z-index:5;
+    position: relative;
 }
 
 section {
