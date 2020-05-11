@@ -879,6 +879,10 @@ nav.arrow a span {
  Contact Us section
 ==================================================================*/
 
+#contact {
+  min-height: auto;
+}
+
 .call-to-action-2 {
   padding: 100px 0;
   background-image: url("../images/call-to-action/call-to-action-bg.jpg");
@@ -1752,6 +1756,12 @@ input#e-mail,
 /*=================================================================
   Footer section
 ==================================================================*/
+
+#footer {
+  height: auto;
+  background: none;  
+}
+
 .social-icon {
   padding: 60px 0 35px;
 }
