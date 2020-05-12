@@ -94,7 +94,7 @@ figure {
 }
 
 a {
-  color: #fff;
+  color: #737f8a;
   transition: all .3s ease-in 0s;
 }
 
@@ -104,7 +104,8 @@ iframe {
 
 a,
 a:focus,
-a:hover {
+a:hover,
+a:visited {
   text-decoration: none !important;
   outline: 0;
 }
@@ -483,13 +484,21 @@ section img.img-header {
   }
 
   section h1 {
-    font-size: 2em;
+    font-size: 1.5em;
     height: 3em;
     margin-top: 20px;
   }
 
   section h2 {
-    font-size: 1.2em;
+    font-size: 1em;
+  }
+
+  section p {
+    font-size: 0.9em;
+  }
+
+  #why .accordion .card-body {
+    font-size: 0.9em;
   }
 
 }
@@ -749,7 +758,7 @@ nav.arrow a span {
 }
 
 /*=================================================================
-  About section
+  Why / About section
 ==================================================================*/
 
 #why .accordion {
@@ -1774,7 +1783,8 @@ input#e-mail,
 
 #footer {
   height: auto;
-  background: none;  
+  background: none;
+  font-size: .7em;
 }
 
 .social-icon {
@@ -1819,7 +1829,7 @@ input#e-mail,
 
 .copyright {
   padding: 20px 0;
-  color: #fff;
+  color: #737f8a !important;
 }
 
 .copyright img {

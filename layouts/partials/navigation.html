@@ -13,7 +13,7 @@
 								<a id="navlink-home" class="nav-link" href='{{ "/" | absLangURL }}#home'>{{ i18n "menu_home" }}</a>
 							</li>
 							<li class="nav-item">
-								<a id="navlink-why" class="nav-link" href='{{ "/" | absLangURL }}#why'>{{ i18n "menu_why" }}</a>
+								<a id="navlink-why" class="nav-link" href='{{ "/" | absURL }}#why'>{{ i18n "menu_why" }}</a>
 							</li>
 							<li class="nav-item">
 								<a id="navlink-history" class="nav-link" href='{{ "/" | absLangURL }}#history'>{{ i18n "menu_history" }}</a>
@@ -31,9 +31,9 @@
 							{{ else }}
 							{{ end }}
 						</ul>
+						{{- if .Site.IsMultiLingual }}
 						<div id="select-language-box">
 							<!-- Language List -->
-							{{- if .Site.IsMultiLingual }}
 							<select id="select-language" onchange="location = this.value;">
 								{{ $siteLanguages := .Site.Languages}}
 								{{ $pageLang := .Page.Lang}}
@@ -52,8 +52,8 @@
 								{{ end }}
 								{{ end }}
 							</select>
-							{{ end }}
 						</div>
+						{{ end }}
 					</div>
 				</nav>
 			</div>
