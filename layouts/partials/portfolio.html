@@ -44,6 +44,9 @@
 				<div class="portfolio-block mb-4">
 					<div class="service-icon text-center">
 						<a target="new" href="{{ .link | safeURL }}">
+							{{ if .exit }}
+								<div class="ribbon">EXIT</div>
+							{{ end }}
 							<img class="img-fluid" src="{{ .image_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .image | absURL }}'" alt="{{ .name }}">
 						</a>
 					</div>

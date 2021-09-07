@@ -1101,6 +1101,18 @@ nav.arrow a span {
 
 }
 
+.ribbon {
+  position: absolute;
+  padding: 5px;
+  top: 15px;
+  right: -65px;
+  transform: rotate(45deg);
+  width: 200px;
+  background-color: yellow;
+  font-size: 15px;
+  font-weight: bold;
+  color: #334357;
+}
 
 .portfolio-filter {
   margin-top: 60px;
@@ -1129,6 +1141,7 @@ nav.arrow a span {
   padding: 20px 30px 20px 30px;
   align-content: center;
   text-align: center;
+  overflow: hidden;
 }
 
 .portfolio-block:before {
