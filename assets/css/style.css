@@ -1114,6 +1114,10 @@ nav.arrow a span {
   color: #334357;
 }
 
+.ribbon.green {
+  background-color: lightgreen;
+}
+
 .portfolio-filter {
   margin-top: 60px;
   margin-bottom: 40px;
