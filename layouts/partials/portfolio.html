@@ -47,6 +47,9 @@
 							{{ if .exit }}
 								<div class="ribbon">EXIT</div>
 							{{ end }}
+							{{ if .pivot }}
+								<div class="ribbon green">PIVOT</div>
+							{{ end }}
 							<img class="img-fluid" src="{{ .image_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .image | absURL }}'" alt="{{ .name }}">
 						</a>
 					</div>
